@@ -127,6 +127,19 @@ header .right {
 	margin: 0 10px 15px;
 }
 
+table{
+	border-collapse: collapse;
+}
+
+th{
+	background-color: red;
+}
+
+th, td{
+  border: 2px solid white;
+  padding: 10px 15px;
+}
+
 
 /* Header */
 header {
