@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="" method="post" onsubmit="return validateform()">
+        <fieldset>
+            <legend>subscription form</legend>
+            <p>
+      <label for="name">name:</label>
+    <input type="text" name="" id="name" placeholder="your name" required>
+</p>
+
+<p>
+    <label for="name">email:</label>
+    <input type="email" name="" id="email" placeholder="your email" required>    
+</p>
+
+<p>
+    <label for="check">monthly:</label>
+    <input type="checkbox" name="" id="check" placeholder="your subscription" value="" required>    
+</p>
+
+<p>
+    <label for="radio">yearly:</label>
+    <input type="radio" name="" id="radio" placeholder="your yearly sub" value="" required>    
+</p>
+
+<button type="submit">send</button>
+
+        </fieldset>
+    </form>
+
+
+<script>
+ function validateform(){
+    const namecheck = document.getElementByI('name');
+    const emailcheck = document.getElementById('email');
+    const boxcheck = document.getElementById('check');
+    const radiocheck = document.getElementById('radio');
+
+    if (namecheck.value === '') {
+        alert('please enter your name')
+        return false
+    }
+
+    if (!emailcheck.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        alert('please enter your correct email')
+        return false
+    }
+
+    if (emailcheck.value === '') {
+        alert('please enter valid email')
+        return false
+    }
+
+    if (!boxcheck.checked && !radiocheck.checked) {
+        alert('please select a correct subscription')
+        return false
+    }
+    return true;
+ }
+</script>
+
+</body>
+</html>

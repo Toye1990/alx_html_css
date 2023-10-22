@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!---Develop an HTML feedback form with checkboxes to capture user opinions and the ability to upload a file:
+
+    Include fields for the user’s name, email, checkboxes for various feedback options (e.g., excellent, good, average, poor), and a file upload field.
+    Ensure that the user can select multiple checkboxes.
+    Specify the file upload field using the <input type="file"> element.
+    Implement HTML5 validation to ensure the name, email, at least one checkbox, and a file are filled out.
+    <form action="">
+        --->
+
+        <form action="" name="" method="post" onsubmit="return validateform()">
+            <fieldset>
+                <legend>subscription form</legend>
+                <p>
+          <label for="name">name:</label>
+        <input type="text" name="" id="name" placeholder="your name" required>
+    </p>
+    
+    <p>
+        <label for="excellent">excellent:</label>
+        <input type="checkbox" name="check[]" id="excellent" required>    
+    </p>
+    
+    <p>
+        <label for="average">average</label>
+        <input type="checkbox" name="check[]" id="good" value="" required>    
+    </p>
+    
+    <p>
+        <label for="poor">poor:</label>
+        <input type="checkbox" name="check[]" id="poor" value="" required>    
+    </p>
+
+    <p>
+        <label for="file">file upload:</label>
+        <input type="file" name="check[]" id="file" value="" required>    
+    </p>
+    
+    <button type="submit">submit</button>
+    
+            </fieldset>
+        </form>
+    
+        <script>
+            function validateform(){
+               const namecheck = document.getElementByI('name');
+               const emailcheck = document.getElementById('email');
+               const checkvalidate = document.getElementById('input[name="check[]"]:checked');
+               const filecheck = document.getElementById('file');
+           
+               if (namecheck.value === '') {
+                   alert('please enter your name')
+                   return false
+               }
+           
+               if (!emailcheck.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                   alert('please enter your correct email')
+                   return false
+               }
+
+               if (emailcheck.value === '') {
+                 alert('enter a correct email')
+                 return false;
+               }
+
+               if (checkvalidate.length === 0) {
+                   alert('please select at least one checkbox')
+                   return false
+               }
+           
+               if (filecheck.value === '') {
+                   alert('upload a correct file')
+                   return false
+               }
+               return true;
+            }
+           </script>
+
+
+
+
+        
+    
+</body>
+</html>
